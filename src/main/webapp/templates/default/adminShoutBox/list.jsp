@@ -14,7 +14,7 @@
 	</c:if>
 
 	<c:forEach items="${shoutboxes}" var="shoutbox">
-		<c:if test="${roleManager.administrator || roleManager.isCategoryAllowed$1[shoutbox.category.id]}">
+		<c:if test="${roleManager.administrator || roleManager.isCategoryAllowed(shoutbox.category.id)}">
 			<tr class="highlight">
 				<td class="row1"><span class="cattitle">${shoutbox.category.name}</span></td>
 				<td class="row2 gen">

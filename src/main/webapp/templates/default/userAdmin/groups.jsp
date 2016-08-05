@@ -15,7 +15,7 @@
 			<td class="row1 gen" width="38%"><jforum:i18n key='Groups.Form.GroupName'/></td>
 			<td class="row2 gen">
 				<c:forEach items="${groups}" var="group">
-					<c:if test="${userSession.roleManager.administrator || userSession.roleManager.isGroupManager$1[group.id]}">
+					<c:if test="${userSession.roleManager.administrator || userSession.roleManager.isGroupManager(group.id)}">
 						<input  type="checkbox" name="groupIds" id="group_${group.id}" value="${group.id}" <c:if test="${jforum:contains(user.groups, group)}">checked</c:if>/>&nbsp;<label for="group_${group.id}">${group.name}</label><br/>
 					</c:if>
 				</c:forEach>

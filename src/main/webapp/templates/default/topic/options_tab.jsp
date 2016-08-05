@@ -3,7 +3,7 @@
 
 <table cellspacing="0" cellpadding="1" border="0" class="genmed">
 	<c:choose>
-		<c:when test="${roleManager.isHtmlAllowed$1[forum.id]}">
+		<c:when test="${roleManager.isHtmlAllowed(forum.id)}">
 			<tr>
 				<td><input type="checkbox" id="disable_html" name="postOptions.disableHtml" value="true" <c:if test="${!post.htmlEnabled}">checked</c:if> /></td>
 				<td><label for="disable_html"><jforum:i18n key='PostForm.disableHtml'/></label></td>

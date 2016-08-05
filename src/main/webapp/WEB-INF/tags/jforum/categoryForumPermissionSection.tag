@@ -8,7 +8,7 @@
 <%@ attribute name="selected" required="true" type="java.util.Collection"%>
 
 <c:forEach items="${categories}" var="category">
-	<c:if test="${userSession.roleManager.administrator || userSession.roleManager.isCategoryAllowed$1[category.id]}">
+	<c:if test="${userSession.roleManager.administrator || userSession.roleManager.isCategoryAllowed(category.id)}">
 		<b>${category.name}</b><br/>
 		<jforum:choicePermissionSection roleName="forum" items="${category.forums}" name="${name}" selected="${selected}"/>
 		<br/>

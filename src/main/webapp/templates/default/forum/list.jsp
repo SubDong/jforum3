@@ -51,7 +51,7 @@
 							
 								<c:remove var="forumUnread"/>
 
-								<c:if test="${!userSession.isForumRead$1[forum]}">
+								<c:if test="${!userSession.isForumRead(forum)}">
 									<c:set var="forumUnread" value="_new"/>
 								</c:if>
 								
@@ -103,7 +103,7 @@
 							</td>
 						</tr>
 					</jforum:displayForums>
-				</jforum:displayCategories>		
+				</jforum:displayCategories>
 				<!-- END OF FORUM LISTING -->
 			</table>
 

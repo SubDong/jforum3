@@ -16,7 +16,7 @@
 	<script type="text/Javascript" src="<jforum:templateResource item='/js/moderation.js'/>"></script>
 </c:if>
 
-<c:set var="canDownloadAttachments" value="${roleManager.getCanDownloadAttachments$1[forum.id]}"/>
+<c:set var="canDownloadAttachments" value="${roleManager.getCanDownloadAttachments(forum.id)}"/>
 
 <table cellspacing="0" cellpadding="10" width="100%" align="center" border="0">
 	<tr>
@@ -46,7 +46,7 @@
 					<c:set var="colspan" value="2"/>
 					
 					<c:set var="displayNewTopicButton" value="${(userSession.logged || forum.allowAnonymousPosts)
-						&& (!roleManager.isForumReadOnly$1[forum.id] && !roleManager.isForumReplyOnly$1[forum.id])
+						&& (!roleManager.isForumReadOnly(forum.id) && !roleManager.isForumReplyOnly(forum.id))
 						&& (!roleManager.postOnlyWithModeratorOnline || (roleManager.postOnlyWithModeratorOnline && isModeratorOnline))}"/>
 					
 					<c:if test="${displayNewTopicButton}">

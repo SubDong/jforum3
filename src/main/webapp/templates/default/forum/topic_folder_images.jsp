@@ -2,7 +2,7 @@
 
 <c:remove var="topicUnread"/>
 
-<c:if test="${!userSession.isTopicRead$1[topic]}">
+<c:if test="${!userSession.isTopicRead(topic)}">
 	<c:set var="topicUnread" value="_new"/>
 </c:if>
 

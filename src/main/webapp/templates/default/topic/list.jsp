@@ -8,7 +8,7 @@
 <c:import url="../header.jsp"/>
 
 <c:set var="canEditSomeMessage" value="false"/>
-<c:set var="attachmentsEnabled" value="${roleManager.getCanDownloadAttachments$1[forum.id] || roleManager.isAttachmentsAlllowed$1[forum.id]}"/>
+<c:set var="attachmentsEnabled" value="${roleManager.getCanDownloadAttachments(forum.id) || roleManager.isAttachmentsAlllowed(forum.id)}"/>
 
 <script type="text/javascript" src="<jforum:templateResource item='/js/post_show.js'/>"></script>
 <script type="text/javascript" src="<jforum:templateResource item='/js/post.js'/>"></script>
@@ -203,7 +203,7 @@
 				<!-- POST LISTING --> 
 				<c:forEach items="${posts}" var="post" varStatus="info">
 					<c:set var="canEditCurrentMessage" value="${userSession.logged && (roleManager.administrator 
-						|| (roleManager.moderator && roleManager.isForumAllowed$1[topic.forum.id] && roleManager.canEditPosts)
+						|| (roleManager.moderator && roleManager.isForumAllowed(topic.forum.id) && roleManager.canEditPosts)
 						|| (!topic.locked && post.user.id == userSession.user.id))}"/>
 				
 					<c:choose>

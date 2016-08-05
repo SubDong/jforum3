@@ -8,12 +8,12 @@
 	<tr>
 		<th class="thhead" valign="center" colspan="6" height="25"><jforum:i18n key="Forums.List.Title"/></th>
 	</tr>
-	
+
 	<jforum:displayCategories items="${categories}" var="category" roleManager="${userSession.roleManager}">
 		<tr>
 			<td colspan="6" class="catleft catTitle">${category.name}</td>
 		</tr>
-		
+
 		<jforum:displayForums items="${category.forums}" var="forum" roleManager="${userSession.roleManager}">
 			<tr class="highlight">
 				<td width="10" class="row1">&nbsp;</td>
@@ -35,7 +35,7 @@
 				
 				<td class="row2" align="center" width="10%">
 					&nbsp;
-					<c:if test="${forumCounter < category.forums.size$0}">
+					<c:if test="${forumCounter < category.forums.size()}">
 						<input type="button" value="<jforum:i18n key="down"/>" class="mainoption" onClick="document.location = '<jforum:url address='/adminForums/down/${forum.id}'/>';"/>
 					</c:if>
 				</td>

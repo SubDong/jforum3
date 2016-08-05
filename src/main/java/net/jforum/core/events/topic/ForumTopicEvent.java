@@ -10,8 +10,8 @@
  */
 package net.jforum.core.events.topic;
 
-import net.jforum.entities.Forum;
 import net.jforum.entities.Topic;
+import net.jforum.entities.Forum;
 import net.jforum.events.EmptyTopicEvent;
 import net.jforum.repository.ForumRepository;
 

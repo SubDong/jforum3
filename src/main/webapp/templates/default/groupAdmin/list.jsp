@@ -26,7 +26,7 @@
 	</tr>
 
 	<c:forEach items="${groups}" var="group">
-		<c:if test="${userSession.roleManager.administrator || userSession.roleManager.isGroupManager$1[group.id]}">
+		<c:if test="${userSession.roleManager.administrator || userSession.roleManager.isGroupManager(group.id)}">
 			<tr class="highlight">
 				<td class="row1 gen">${group.name}</td>
 

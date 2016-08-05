@@ -62,7 +62,7 @@ function checkInput() {
 		<td class="row2">
 			<select name="forum.category.id">
 				<c:forEach items="${categories}" var="category">
-					<c:if test="${roleManager.administrator || roleManager.isCategoryAllowed$1[category.id]}">
+					<c:if test="${roleManager.administrator || roleManager.isCategoryAllowed(category.id)}">
 						<option value="${category.id}" <c:if test="${not empty forum && forum.category.id == category.id}">selected</c:if>>${category.name}</option>
 					</c:if>
 				</c:forEach>

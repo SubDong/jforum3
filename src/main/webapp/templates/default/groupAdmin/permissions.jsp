@@ -51,7 +51,7 @@ div.scroll {
 			<td class="row2">&nbsp;</td>
 			<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.isCoAdministrator"/></td>
 			<td class="row2" valign="middle" align="left">
-				<jforum:booleanPermissionSection name="role_b$coAdministrator" value="${roleManager.isCoAdministrator$}"/>
+				<jforum:booleanPermissionSection name="role_b$coAdministrator" value="${roleManager.isCoAdministrator()}"/>
 			</td>
 		</tr>
 		
@@ -60,8 +60,8 @@ div.scroll {
 			<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.canManageForums"/></td>
 			<td class="row2" valign="middle" align="left">
 				<c:choose>
-					<c:when test="${roleManager.roleExists$1['canManageForums']}">
-						<jforum:booleanPermissionSection name="role_b$canManageForums" value="${roleManager.get$['canManageForums'].getRoleValues$}"/>
+					<c:when test="${roleManager.roleExists('canManageForums')}">
+						<jforum:booleanPermissionSection name="role_b$canManageForums" value="${roleManager.get('canManageForums').getRoleValues()}"/>
 					</c:when>
 					<c:otherwise>
 
@@ -75,7 +75,7 @@ div.scroll {
 			<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.chooseGroups"/></td>
 			<td class="row2" valign="middle" align="left">
 				<div class="scroll">
-					<jforum:choicePermissionSection roleName="group" items="${groups}" name="role_b$groups" selected="${roleManager.getRoleValuesAsList$1['groups']}"/>
+					<jforum:choicePermissionSection roleName="group" items="${groups}" name="role_b$groups" selected="${roleManager.getRoleValuesAsList('groups')}"/>
 				</div>
 			</td>
 		</tr>
@@ -93,7 +93,7 @@ div.scroll {
 		<td class="row2">&nbsp;</td>
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.chooseCategories"/></td>
 		<td class="row2" valign="middle" align="left">
-			<jforum:choicePermissionSection roleName="category" items="${categories}" name="role_m$category" selected="${roleManager.getRoleValuesAsList$['category']}"/>
+			<jforum:choicePermissionSection roleName="category" items="${categories}" name="role_m$category" selected="${roleManager.getRoleValuesAsList('category')}"/>
 		</td>
 	</tr>
 
@@ -109,7 +109,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.chooseForums"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$forum" selected="${roleManager.getRoleValuesAsList$['forum']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$forum" selected="${roleManager.getRoleValuesAsList('forum')}"/>
 			</div>
 		</td>
 	</tr>
@@ -126,7 +126,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.replyOnlyDescription"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_b$forum_reply_only" selected="${roleManager.getRoleValuesAsList$['forum_reply_only']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_b$forum_reply_only" selected="${roleManager.getRoleValuesAsList('forum_reply_only')}"/>
 			</div>
 		</td>
 	</tr>
@@ -144,7 +144,7 @@ div.scroll {
 			<td class="row2">&nbsp;</td>
 			<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.interactOtherGroups"/></td>
 			<td class="row2" valign="middle" align="left">
-				<jforum:booleanPermissionSection name="role_b$interact_other_groups" value="${roleManager.roleExists$1['interact_other_groups']}"/>
+				<jforum:booleanPermissionSection name="role_b$interact_other_groups" value="${roleManager.roleExists('interact_other_groups')}"/>
 			</td>
 		</tr>
 	</c:if>
@@ -242,7 +242,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.readOnlyDescription"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$forum_read_only" selected="${roleManager.getRoleValuesAsList$['forum_read_only']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$forum_read_only" selected="${roleManager.getRoleValuesAsList('forum_read_only')}"/>
 			</div>
 		</td>
 	</tr>
@@ -259,7 +259,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.moderationRepliesDescription"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$moderate_replies" selected="${roleManager.getRoleValuesAsList$['moderate_replies']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$moderate_replies" selected="${roleManager.getRoleValuesAsList('moderate_replies')}"/>
 			</div>
 		</td>
 	</tr>
@@ -276,7 +276,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.htmlDescription"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$html_allowed" selected="${roleManager.getRoleValuesAsList$['html_allowed']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$html_allowed" selected="${roleManager.getRoleValuesAsList('html_allowed')}"/>
 			</div>
 		</td>
 	</tr>
@@ -294,7 +294,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.attachmentsDescription"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$attachments_enabled" selected="${roleManager.getRoleValuesAsList$['attachments_enabled']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$attachments_enabled" selected="${roleManager.getRoleValuesAsList('attachments_enabled')}"/>
 			</div>
 		</td>
 	</tr>
@@ -305,7 +305,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.attachmentsDownload"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$attachments_download" selected="${roleManager.getRoleValuesAsList$['attachments_download']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$attachments_download" selected="${roleManager.getRoleValuesAsList('attachments_download')}"/>
 			</div>
 		</td>
 	</tr>
@@ -341,7 +341,7 @@ div.scroll {
 		<td class="row2" valign="top" width="33%"><jforum:i18n key="Permissions.moderateForums"/></td>
 		<td class="row2" valign="middle" align="left">
 			<div class="scroll">
-				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$moderate_forum" selected="${roleManager.getRoleValuesAsList$['moderate_forum']}"/>
+				<jforum:categoryForumPermissionSection categories="${categories}" name="role_m$moderate_forum" selected="${roleManager.getRoleValuesAsList('moderate_forum')}"/>
 			</div>
 		</td>
 	</tr>

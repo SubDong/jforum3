@@ -100,7 +100,7 @@ function testEmail()
 		<span class="gen">
 		<select name="p_i18n.board.default">
 			<c:forEach items="${locales}" var="locale">
-				<option value="${locale}" <c:if test="${locale == config.getValue$1['i18n.board.default']}">selected</c:if>>${locale}</option>
+				<option value="${locale}" <c:if test="${locale == config.getValue('i18n.board.default')}">selected</c:if>>${locale}</option>
 			</c:forEach>
 		</select>
 		</span>
@@ -137,8 +137,8 @@ function testEmail()
 	<td class="row2" width="38%">
 		<span class="gen">
 			<select name="p_captcha.registration">
-				<option value="true" <c:if test="${config.getValue$1['captcha.registration'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
-				<option value="false" <c:if test="${config.getValue$1['captcha.registration'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+				<option value="true" <c:if test="${config.getValue('captcha.registration') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+				<option value="false" <c:if test="${config.getValue('captcha.registration') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
 			</select>
 		</span>
 	</td>
@@ -149,8 +149,8 @@ function testEmail()
 	<td class="row1" width="38%">
 		<span class="gen">
 			<select name="p_registration.enabled">
-				<option value="true" <c:if test="${config.getValue$1['registration.enabled'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
-				<option value="false" <c:if test="${config.getValue$1['registration.enabled'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+				<option value="true" <c:if test="${config.getValue('registration.enabled') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+				<option value="false" <c:if test="${config.getValue('registration.enabled') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
 			</select>
 		</span>
 	</td>
@@ -161,8 +161,8 @@ function testEmail()
 	<td class="row2" width="38%">
 		<span class="gen">
 			<select name="p_rss.enabled">
-				<option value="true" <c:if test="${config.getValue$1['rss.enabled'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
-				<option value="false" <c:if test="${config.getValue$1['rss.enabled'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+				<option value="true" <c:if test="${config.getValue('rss.enabled') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+				<option value="false" <c:if test="${config.getValue('rss.enabled') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
 			</select>
 		</span>
 	</td>
@@ -188,7 +188,7 @@ function testEmail()
 <tr>
 	<td class="row2" width="38%"><span class="gen"><jforum:i18n key="Config.Form.avatarPreview"/></span></td>
 	<td class="row2" width="38%">
-		<input type="hidden" name="thumbH" value='${config.getValue("avatar.maxHeight")}'/>	
+		<input type="hidden" name="thumbH" value='${config.getValue("avatar.maxHeight")}'/>
 		<input type="hidden" name="thumbW" value='${config.getValue("avatar.maxWidth")}'/>
 		<div id="avatarPreview" style="align:center; border:1px solid orange;">&nbsp;</div>
 	</td>
@@ -219,8 +219,8 @@ function testEmail()
 	<td class="row1" width="38%"><span class="gen"><jforum:i18n key="Config.Form.SmtpAuth"/></span></td>
 	<td class="row1" width="38%">
 		<select name="p_mail.smtp.auth" id="auth">
-			<option value="false" <c:if test="${config.getValue$1['mail.smtp.auth'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
-			<option value="true" <c:if test="${config.getValue$1['mail.smtp.auth'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+			<option value="false" <c:if test="${config.getValue('mail.smtp.auth') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+			<option value="true" <c:if test="${config.getValue('mail.smtp.auth') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
 		</select>
 	</td>
 </tr>
@@ -228,8 +228,8 @@ function testEmail()
 	<td class="row1" width="38%"><span class="gen"><jforum:i18n key="Config.Form.MailSSL"/></span></td>
 	<td class="row1" width="38%">
 		<select name="p_mail.smtp.ssl" id="ssl">
-			<option value="false" <c:if test="${config.getValue$1['mail.smtp.ssl'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
-			<option value="true" <c:if test="${config.getValue$1['mail.smtp.ssl'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+			<option value="false" <c:if test="${config.getValue('mail.smtp.ssl') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+			<option value="true" <c:if test="${config.getValue('mail.smtp.ssl') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
 		</select>
 	</td>
 </tr>
@@ -253,8 +253,8 @@ function testEmail()
 	<td class="row1" width="38%"><span class="gen"><jforum:i18n key="Config.Form.MessageFormat"/></span></td>
 	<td class="row1" width="38%">
 		<select name="p_mail.messageFormat">
-			<option value="text" <c:if test="${config.getValue$1['mail.messageFormat'] == 'text'}">selected</c:if>>Text</option>
-			<option value="html" <c:if test="${config.getValue$1['mail.messageFormat'] == 'html'}">selected</c:if>>HTML</option>
+			<option value="text" <c:if test="${config.getValue('mail.messageFormat') == 'text'}">selected</c:if>>Text</option>
+			<option value="html" <c:if test="${config.getValue('mail.messageFormat') == 'html'}">selected</c:if>>HTML</option>
 		</select>
 	</td>
 </tr>
@@ -263,8 +263,8 @@ function testEmail()
 	<td class="row2" width="38%"><span class="gen"><jforum:i18n key="Config.Form.EmailNotifyAnswers"/></span></td>
 	<td class="row2" width="38%">
 		<select name="p_mail.notify.answers">
-			<option value="false" <c:if test="${config.getValue$1['mail.notify.answers'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
-			<option value="true" <c:if test="${config.getValue$1['mail.notify.answers'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+			<option value="false" <c:if test="${config.getValue('mail.notify.answers') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+			<option value="true" <c:if test="${config.getValue('mail.notify.answers') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
 		</select>
 	</td>
 </tr>
@@ -272,8 +272,8 @@ function testEmail()
 	<td class="row1" width="38%"><span class="gen"><jforum:i18n key="Config.Form.UserEmailAuth"/></span></td>
 	<td class="row1" width="38%">
 		<select name="p_mail.user.email.auth">
-			<option value="false" <c:if test="${config.getValue$1['mail.user.email.auth'] == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
-			<option value="true" <c:if test="${config.getValue$1['mail.user.email.aith'] == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
+			<option value="false" <c:if test="${config.getValue('mail.user.email.auth') == 'false'}">selected</c:if>><jforum:i18n key="False"/></option>
+			<option value="true" <c:if test="${config.getValue('mail.user.email.aith') == 'true'}">selected</c:if>><jforum:i18n key="True"/></option>
 		</select>
 	</td>
 </tr>
